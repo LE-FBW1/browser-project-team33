@@ -1,6 +1,99 @@
 // This is where your styles can go, import any other scss or css files here or write your own style directly below
 
+:root {
+  font-size: 62.5%;
+}
+
 body,
 body * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+// Home page
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container>* {
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.button {
+  padding: 2rem;
+  text-decoration: none;
+  border: .1rem solid black;
+  border-radius: .4rem;
+  margin-bottom: .7rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: lightblue;
+  width: 25rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+// Game page
+
+h2 {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.container-game-page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  //display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.choice-container {
+  display: flex;
+  margin-bottom: .7rem;
+  width: 100%;
+  font-size: 2rem;
+  border: .1rem solid black;
+  background-color: #fff;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.choice-prefix {
+  padding: 2rem;
+  background-color: lightblue;
+}
+
+.choice-text {
+  padding: 2rem;
 }
