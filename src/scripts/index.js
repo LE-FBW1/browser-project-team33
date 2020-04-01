@@ -5,3 +5,15 @@ import '../styles/main.scss';
 
 // \/ All of your javascript should go here \/
 
+const playButton = document.querySelector('#play');
+const homePage = document.querySelector('#home');
+const gamePage = document.querySelector('#game-page');
+
+
+const displayGamePage = (e) => {
+    e.preventDefault();
+    homePage.style.display = 'none';
+    gamePage.style.display = 'flex';
+}
+
+playButton.addEventListener('click', displayGamePage);
