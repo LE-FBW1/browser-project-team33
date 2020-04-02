@@ -1,14 +1,107 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
+
+:root {
+  font-size: 62.5%;
+}
+
 body,
 body * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-/* FORMS */
-.btn {
+// Home page
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container>* {
+  width: 100%;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 4rem;
   text-align: center;
 }
+
+// Game page
+
+#finalScore {
+  font-size: 4rem;
+  margin-bottom: 4rem;
+  color: blue;
+}
+
+.container-game-page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  //display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lightgrey;
+}
+
+.choice-container {
+  display: flex;
+  margin-bottom: .7rem;
+  width: 100%;
+  font-size: 2rem;
+  border: .1rem solid black;
+  background-color: #fff;
+}
+
+.choice-container:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+.choice-prefix {
+  padding: 2rem;
+  background-color: lightblue;
+}
+
+.choice-text {
+  padding: 2rem;
+}
+
+.button {
+  padding: 3rem;
+  text-decoration: none;
+  border: .1rem solid black;
+  border-radius: .4rem;
+  margin-bottom: .7rem;
+  font-size: 2rem;
+  text-align: center;
+  background-color: rgb(173, 216, 230);
+  width: 25rem;
+  color: blue;
+}
+
+.button:hover {
+  cursor: pointer;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+}
+
+// END PAGE STYLE
 
 form {
   width: 100%;
@@ -18,37 +111,23 @@ form {
 }
 
 input {
-  margin-bottom: 1rem;
-  width: 20rem;
+  margin-bottom: 5rem;
+  width: 25rem;
   padding: 1.5rem;
   font-size: 1.8rem;
-  border: none;
-  box-shadow: 0 0.1rem 1.4rem 0 rgba(86, 185, 235, 0.5);
+  border: .1rem solid black;
+  box-shadow: 0 0.1rem 1.4rem 0 rgba(173, 216, 230, 0.5);
 }
 
 input::placeholder {
   color: #aaa;
+  text-align: center;
 }
 
-
-.container {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.container > * {
-  width: 100%;
-}
 
 .flex-column {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .flex-center {

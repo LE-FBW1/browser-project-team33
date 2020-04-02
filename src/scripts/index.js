@@ -3,5 +3,13 @@ import '../styles/main.scss';
 // Import any additional modules you want to include below \/
 
 
-// \/ All of your javascript should go here \/
 
+// \/ All of your javascript should go here \/
+const saveScoreButton = document.getElementById('saveScoreButton');
+
+const saveHighScore = evt => {
+    console.log('Twoja stara');
+    evt.preventDefault();  
+};
+
+saveScoreButton.addEventListener('click', saveHighScore);

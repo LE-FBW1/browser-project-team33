@@ -8,27 +8,25 @@
   </head>
  <body>
     <main class="container">
-        <div id="end" class="flex-center flex-column">
-          <h1 id="finalScore"></h1>
-          <form>
+      <div id="end" class="flex-center flex-column">
+        <h1>Final Score</h1>
+        <h2 id="finalScore">0</h2>  
+        <form>
             <input
               type="text"
               name="username"
               id="username"
-              placeholder="username"
-            />
+              placeholder="Player Name"/>
             <button
               type="submit"
-              class="btn btn-danger btn-lg btn-block btn-outline-danger"
-              id="saveScoreBtn"
-              onclick="saveHighScore(event)"
-              disabled
-            >
+              class="button"
+              id="saveScoreButton"
+              >
               Save
             </button>
           </form>
-          <a class="btn btn-lg btn-success" href="/game.html">Play Again</a>
-          <a class="btn btn-lg btn-secondary" href="/">Go Home</a>
+          <a id="play" class="button" href="">Play</a>
+          <a class="button" href="">High Scores</a>
         </div>
     </main>
   </body>
