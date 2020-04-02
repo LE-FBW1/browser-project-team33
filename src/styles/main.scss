@@ -1,8 +1,10 @@
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 
+
 :root {
   font-size: 62.5%;
+  font-family: 'Dosis', sans-serif;
 }
 
 body,
@@ -23,6 +25,7 @@ body * {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(207, 240, 238);
 }
 
 .container>* {
@@ -30,18 +33,65 @@ body * {
 }
 
 h1 {
-  font-size: 4rem;
-  margin-bottom: 4rem;
+  font-size: 5rem;
+  margin-bottom: 8rem;
   text-align: center;
+}
+
+.button {
+  padding: 1.7rem;
+  text-decoration: none;
+  border: .1rem solid black;
+  border-radius: .4rem;
+  margin-bottom: .7rem;
+  font-size: 2.2rem;
+  text-align: center;
+  background-color: rgb(114, 170, 167);
+  color: white;
+  font-weight: 700;
+  letter-spacing: .15rem;
+  width: 25rem;
+}
+
+.button:hover {
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-0.1rem);
+  transition: transform 150ms;
+  background-color: rgb(114, 170, 167);
+  color: white;
+  font-weight: 700;
 }
 
 // Game page
 
-#finalScore {
-  font-size: 4rem;
-  margin-bottom: 4rem;
-  color: blue;
+#hud {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6rem;
+  color: rgb(35, 112, 112);
+  font-weight: bold;
 }
+
+.hud-prefix {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.hud-main-text {
+  text-align: center;
+}
+
+h2 {
+  font-size: 4rem;
+  margin-bottom: 8rem;
+  text-align: center;
+  font-weight: 400;
+  color: rgb(68, 67, 67);
+}
+
 
 .container-game-page {
   display: none;
@@ -49,11 +99,12 @@ h1 {
   height: 100vh;
   max-width: 90rem;
   margin: 0 auto;
+  padding: 2rem;
   //display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: lightgrey;
+  background-color: rgb(207, 240, 238);
 }
 
 .choice-container {
@@ -62,6 +113,7 @@ h1 {
   width: 100%;
   font-size: 2rem;
   border: .1rem solid black;
+  border-radius: .5rem;
   background-color: #fff;
 }
 
@@ -73,32 +125,53 @@ h1 {
 }
 
 .choice-prefix {
-  padding: 2rem;
-  background-color: lightblue;
+  padding: 1.5rem;
+  background-color: rgb(97, 190, 190);
+  border-radius: .5rem;
 }
 
 .choice-text {
-  padding: 2rem;
+  padding: 1.5rem;
+  width: 100%;
+  letter-spacing: .1rem;
 }
 
-.button {
-  padding: 3rem;
-  text-decoration: none;
-  border: .1rem solid black;
-  border-radius: .4rem;
-  margin-bottom: .7rem;
+.correct {
+  background-color: green;
+}
+
+.incorrect {
+  background-color: red;
+}
+
+
+///highscore start
+.container-highScores-page {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  max-width: 90rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#highScoresList {
+  list-style: none;
+  margin-bottom: 3rem;
+}
+
+.high-score {
   font-size: 2rem;
+  margin-bottom: 0.5rem;
   text-align: center;
-  background-color: rgb(173, 216, 230);
-  width: 25rem;
-  color: blue;
 }
 
-.button:hover {
-  cursor: pointer;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  transform: translateY(-0.1rem);
-  transition: transform 150ms;
+.high-score:hover {
+  transform: scale(1.3);
+  color: rgb(82, 83, 146)
 }
 
 // END PAGE STYLE
