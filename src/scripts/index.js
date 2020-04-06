@@ -49,24 +49,10 @@ homePageButton.addEventListener('click', displayHomePage);
 // Get and display high scores
 const highScoresList = document.getElementById("highScoresList");
 
-//const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
-
-//Temporary
-const highScores = [{
-    score: 100,
-    name: "Felix"
-}, {
-    score: 90,
-    name: "Joe"
-}, {
-    score: 150,
-    name: "Steve"
-}];
-
-
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
 //console.log(highScores);
 highScoresList.innerHTML = highScores.map(score => {
-        return `<li class="high-score">${score.name} => ${score.score}</li>`;
+        return `<li class="high-score">${score.username}: ${score.score}</li>`;
     })
     .join("");

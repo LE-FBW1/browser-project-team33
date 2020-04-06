@@ -57,10 +57,7 @@ const displayEndPage = () => {
   </section>`
 };
 
-const saveHighScore = e => {
-    e.preventDefault();
-    console.log('hello');
-}
+
 
 const getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
@@ -70,6 +67,27 @@ const getNewQuestion = () => {
         const finalScore = document.getElementById('finalScore');
         const saveScoreButton = document.getElementById('saveScoreButton');
         const mostRecentScore = localStorage.getItem('mostRecentScore');
+        //Save High Scores in LS-Begin
+        const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+        const saveHighScore = e => {
+            e.preventDefault();
+            const MAX_HIGH_SCORES = 5;
+            const scoreObj={ username: username.value,
+                            score: score}
+
+            highScores.push(scoreObj);
+    
+            highScores.sort((a, b) => b.score - a.score);
+            highScores.splice(MAX_HIGH_SCORES); 
+            localStorage.setItem("highScores", JSON.stringify(highScores));
+        }
+
+      
+       
+        
+        //Save High Scores in LS-End
+
         finalScore.innerText = mostRecentScore;
         username.addEventListener('keyup', () => {
             saveScoreButton.disabled = !username.value;
