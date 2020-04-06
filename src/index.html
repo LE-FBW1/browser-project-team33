@@ -10,13 +10,15 @@
 </head>
 
 <body>
+  <!-- Home Page Start-->
   <main id="home" class="container">
-    <h1>Welcome To The Quiz Game</h1>
+    <h1>Show Your Knowledge</h1>
     <a id="play" class="button" href="">Play</a>
-    <!-- highscore -->
     <a id="highScores-btn" class="button" href="">High Scores</a>
-    <!-- highscore -->
   </main>
+  <!-- Home Page End-->
+
+  <!-- Game Page Start-->
   <section id="game-page" class="container-game-page">
     <div id="hud">
       <div id="hud-item-1">
@@ -28,7 +30,6 @@
         <h2 class="hud-main-text" id="scoreText">0</h2>
       </div>
     </div>
-
     <h2 id="question">Answer the Question</h2>
     <div class="choice-container">
       <p class="choice-prefix">A</p>
@@ -47,14 +48,27 @@
       <p class="choice-text" data-number="4">Choice 4</p>
     </div>
   </section>
+  <!-- Game Page End -->
 
-  <!-- highscore -->
+  <!-- high score page start-->
   <section id="highScores-page" class="container-highScores-page">
     <h1 id="finalScore">High Scores</h1>
     <ul id="highScoresList"></ul>
     <a id="goHome-btn" class="button" href="">Go Home</a>
   </section>
-  <!-- highscore -->
+  <!-- high score page end-->
+
+  <!-- End Page Start-->
+  <section id="end-page" class="container-end-page">
+    <h1 id="finalScore">0</h1>
+    <form id="form">
+      <input type="text" name="username" id="username" placeholder="username">
+      <button type="submit" class="button" id="saveScoreButton">Save</button>
+    </form>
+    <a id="playAgain" class="button" href="">Play Again</a>
+    <a id="goHome" class="button" href="">Go Home</a>
+  </section>
+  <!-- End Page End-->
 
 
 </body>

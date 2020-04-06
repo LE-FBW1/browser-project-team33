@@ -5,7 +5,7 @@ import startGame from './game';
 
 // \/ All of your javascript should go here \/
 
-//Hide main page and display game page when we click on the play button
+//Hide main page and display game page when we click on the 'play' button
 const playButton = document.querySelector('#play');
 const homePage = document.querySelector('#home');
 const gamePage = document.querySelector('#game-page');
@@ -21,11 +21,11 @@ playButton.addEventListener('click', displayGamePageAndStartGame);
 
 
 
-// go High Score page
-const highScoresPage = document.querySelector('#highScores-page');
+// Hide main page and display high scores page when we click on the 'High Scores' button
+/*const highScoresPage = document.querySelector('#highScores-page');
 const highScoresButton = document.querySelector('#highScores-btn');
 
-const displayHighScoresPageAndStartGame = (e) => {
+const displayHighScoresPageAndStartGame = e => {
     e.preventDefault();
     homePage.style.display = 'none';
     highScoresPage.style.display = 'flex';
@@ -34,18 +34,19 @@ const displayHighScoresPageAndStartGame = (e) => {
 highScoresButton.addEventListener('click', displayHighScoresPageAndStartGame);
 
 
-//goHomeButton
+//"Go Home" button in high scores page 
 const homePageButton = document.querySelector('#goHome-btn');
 
-const displayHomePage = (e) => {
+const displayHomePage = e => {
     e.preventDefault();
-    homePage.style.display = 'flex';
     highScoresPage.style.display = 'none';
+    homePage.style.display = 'flex';
+
 }
 
 homePageButton.addEventListener('click', displayHomePage);
 
-// highScore
+// Get and display high scores
 const highScoresList = document.getElementById("highScoresList");
 
 //const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
@@ -66,4 +67,18 @@ const highScores = [{
 highScoresList.innerHTML = highScores.map(score => {
         return `<li class="high-score">${score.name} => ${score.score}</li>`;
     })
-    .join("");
+    .join("");*/
+
+
+// End Page
+
+const username = document.getElementById('username');
+const saveScoreButton = document.getElementById('saveScoreButton');
+const form = document.getElementById('form');
+
+const saveHighScore = e => {
+    e.preventDefault();
+    console.log('hello');
+}
+
+saveScoreButton.addEventListener('click', saveHighScore);

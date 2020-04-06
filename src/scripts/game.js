@@ -2,6 +2,8 @@ const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
 const questionCounterText = document.getElementById('questionCounterText');
 const scoreText = document.getElementById('scoreText');
+//const endPage = document.getElementById('end-page');
+//const homePage = document.querySelector('#home');
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -42,9 +44,28 @@ const startGame = () => {
     //console.log(availableQuestions);
     getNewQuestion();
 };
+
+const displayEndPage = () => {
+    return document.body.innerHTML = `<section id="end-page" class="container-end-page" style = "display:flex">
+    <h1 id="finalScore">0</h1>
+    <form>
+      <input type="text" name="username" id="username" placeholder="username">
+      <button type="submit" class="button" id="saveScoreButton" >Save</button>
+    </form>
+    <a id="playAgain" class="button" href="">Play Again</a>
+    <a id="goHome" class="button" href="">Go Home</a>
+  </section>`
+    // homePage.style.display = 'none';
+    // return endPage.style.display = 'flex';
+};
+
 const getNewQuestion = () => {
+    // if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+    //     return window.location.assign("end.html");
+    // }
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        return window.location.assign("/end.html");
+        return displayEndPage();
+        //     return window.location.assign("../index.html");
     }
     questionCounter++;
     questionCounterText.innerHTML = `${questionCounter} / ${MAX_QUESTIONS}`;
@@ -69,13 +90,15 @@ choices.forEach(choice => {
         const classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect';
         //console.log(classToApply);
         //console.log(selectedAnswer);
-        if (classToApply === 'correct') incrementScore(CORRECT_BONUS);
+        if (classToApply === 'correct') {
+            incrementScore(CORRECT_BONUS)
+        };
+
         selectedChoice.parentElement.classList.add(classToApply);
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
             getNewQuestion();
-        }, 1500);
-
+        }, 1000);
     });
 });
 
@@ -83,5 +106,7 @@ const incrementScore = number => {
     score += number;
     scoreText.innerHTML = score;
 }
+
+
 
 export default startGame;
