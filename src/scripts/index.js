@@ -50,6 +50,7 @@ homePageButton.addEventListener('click', displayHomePage);
 const highScoresList = document.getElementById("highScoresList");
 
 //const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
 //Temporary
 const highScores = [{
     score: 100,
