@@ -179,6 +179,8 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgb(207, 240, 238);
+
 }
 
 #highScoresList {
@@ -187,9 +189,10 @@ h2 {
 }
 
 .high-score {
-  font-size: 2rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
   text-align: center;
+  font-weight: 800;
 }
 
 .high-score:hover {
