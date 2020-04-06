@@ -89,7 +89,7 @@ playButton.addEventListener('click', displayGamePageAndStartGame);
 
 
 // Hide main page and display high scores page when we click on the 'High Scores' button
-/*const highScoresPage = document.querySelector('#highScores-page');
+const highScoresPage = document.querySelector('#highScores-page');
 const highScoresButton = document.querySelector('#highScores-btn');
 
 const displayHighScoresPageAndStartGame = e => {
@@ -135,18 +135,13 @@ const highScores = [{
 highScoresList.innerHTML = highScores.map(score => {
         return `<li class="high-score">${score.name} => ${score.score}</li>`;
     })
-    .join("");*/
+    .join("");
 
 
 // End Page
 
-const username = document.getElementById('username');
-const saveScoreButton = document.getElementById('saveScoreButton');
-const form = document.getElementById('form');
-
-const saveHighScore = e => {
-    e.preventDefault();
-    console.log('hello');
-}
-
-saveScoreButton.addEventListener('click', saveHighScore);
+// const username = document.getElementById('username');
+// const saveScoreButton = document.getElementById('saveScoreButton');
+// console.log(saveScoreButton);
+// const form = document.getElementById('form');
+// saveScoreButton.addEventListener('click', saveHighScore);

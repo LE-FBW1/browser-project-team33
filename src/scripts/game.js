@@ -55,18 +55,21 @@ const displayEndPage = () => {
     <a id="playAgain" class="button" href="">Play Again</a>
     <a id="goHome" class="button" href="">Go Home</a>
   </section>`
-    // homePage.style.display = 'none';
-    // return endPage.style.display = 'flex';
 };
 
+const saveHighScore = e => {
+    e.preventDefault();
+    console.log('hello');
+}
+
 const getNewQuestion = () => {
-    // if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-    //     return window.location.assign("end.html");
-    // }
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        return displayEndPage();
-        //     return window.location.assign("../index.html");
+        displayEndPage();
+        const saveScoreButton = document.getElementById('saveScoreButton');
+        saveScoreButton.addEventListener('click', saveHighScore);
+        return true;
     }
+
     questionCounter++;
     questionCounterText.innerHTML = `${questionCounter} / ${MAX_QUESTIONS}`;
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
