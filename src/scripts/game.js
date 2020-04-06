@@ -47,10 +47,10 @@ const startGame = () => {
 
 const displayEndPage = () => {
     return document.body.innerHTML = `<section id="end-page" class="container-end-page" style = "display:flex">
-    <h1 id="finalScore">0</h1>
+    <h1 id="finalScore"></h1>
     <form>
       <input type="text" name="username" id="username" placeholder="username">
-      <button type="submit" class="button" id="saveScoreButton" >Save</button>
+      <button type="submit" class="button" id="saveScoreButton" disabled>Save</button>
     </form>
     <a id="playAgain" class="button" href="">Play Again</a>
     <a id="goHome" class="button" href="">Go Home</a>
@@ -64,8 +64,16 @@ const saveHighScore = e => {
 
 const getNewQuestion = () => {
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
+        localStorage.setItem('mostRecentScore', score);
         displayEndPage();
+        const username = document.getElementById('username');
+        const finalScore = document.getElementById('finalScore');
         const saveScoreButton = document.getElementById('saveScoreButton');
+        const mostRecentScore = localStorage.getItem('mostRecentScore');
+        finalScore.innerText = mostRecentScore;
+        username.addEventListener('keyup', () => {
+            saveScoreButton.disabled = !username.value;
+        });
         saveScoreButton.addEventListener('click', saveHighScore);
         return true;
     }
